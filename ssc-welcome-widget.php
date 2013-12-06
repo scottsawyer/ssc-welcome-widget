@@ -10,20 +10,21 @@ Contributors: Scott Sawyer
 */
 
 function ssc_welcome_panel(){
+	
 	?>
   <script type="text/javascript">
     /* Hide default welcome message */
     jQuery(document).ready( function($) {
-	    $('div.welcome-panel-content').hide();
+	    $('div.welcome-panel-content, a.welcome-panel-close, p.welcome-panel-dismiss').hide();
     });
     </script>
   <div class="custom-welcome-panel-content">
-<h3><?php _e( 'Welcome to ' . $bloginfo( 'site_name' ) . ' dashboard Message!' ); ?></h3>
+<h3><?php _e( 'Welcome to ' ) . bloginfo( 'name' ) . _e( '\'s dashboard!' ); ?></h3>
 <p class="about-description"><?php _e( 'Here you can place your custom text, give your customers instructions, place an ad or your contact information.' ); ?></p>
 <div class="welcome-panel-column-container">
 <div class="welcome-panel-column">
 	<h4><?php _e( "Let's Get Started" ); ?></h4>
-	<a class="button button-primary button-hero load-customize hide-if-no-customize" href="http://your-website.com"><?php _e( 'Call me maybe !' ); ?></a>
+	<a class="button button-primary button-hero load-customize hide-if-no-customize" href="<?php echo home_url(); ?>"><?php _e( 'Visit Your Site' ); ?></a>
 		<p class="hide-if-no-customize"><?php printf( __( 'or, <a href="%s">edit your site settings</a>' ), admin_url( 'options-general.php' ) ); ?></p>
 </div>
 <div class="welcome-panel-column">
